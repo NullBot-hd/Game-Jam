@@ -1,26 +1,8 @@
 [gd_scene format=3 uid="uid://dmgfcf5iru7aa"]
 
+[ext_resource type="Script" uid="uid://baqceovvg37f3" path="res://scripts/coin.gd" id="1_i64fm"]
 [ext_resource type="Texture2D" uid="uid://dgohvm5jnb0lg" path="res://assets/sprites/coin.png" id="1_rwqht"]
 [ext_resource type="AudioStream" uid="uid://cw6rnc4we5p4w" path="res://assets/sounds/coin.wav" id="2_i64fm"]
-
-[sub_resource type="GDScript" id="GDScript_11l1o"]
-script/source = "extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-#	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
-
-
-
-func _on_body_entered(body: Node2D) -> void:		
-	print(\"+1 Coin!\")
-	queue_free()
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i64fm"]
 atlas = ExtResource("1_rwqht")
@@ -151,12 +133,13 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_1ikuy"]
 resource_name = "pickup"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -190,7 +173,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [true]
 }
 tracks/3/type = "method"
@@ -216,7 +199,7 @@ _data = {
 
 [node name="Coin" type="Area2D" unique_id=851005054]
 collision_mask = 2
-script = SubResource("GDScript_11l1o")
+script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1057001001]
 sprite_frames = SubResource("SpriteFrames_ls27i")
