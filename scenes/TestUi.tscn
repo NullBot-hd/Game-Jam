@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ckd6pbbylonx2"]
+
+[node name="Control" type="Control" unique_id=717147400]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=261194096]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+
+[node name="Panel2" type="Panel" parent="." unique_id=1640182232]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 107.0
+offset_top = 604.0
+offset_right = -194.0
+offset_bottom = -234.0
+
+[node name="Panel" type="Panel" parent="Panel2" unique_id=1126485380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -275.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
