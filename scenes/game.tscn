@@ -87,7 +87,7 @@ texture = ExtResource("2_yqjtg")
 9:2/0 = 0
 9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -5.935338, 8, 0.09892082, -8, -1.3849125)
 10:2/0 = 0
-10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.1331835, 8, -6.2321053, 8, 1.0881443, -8, 1.0881443)
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:2/0 = 0
 11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.1331835, 8, -8, 8, -1.582758, -8, 0.29676628)
 0:3/0 = 0
@@ -426,13 +426,8 @@ autowrap_mode = 1
 uppercase = true
 
 [node name="Player1" parent="." unique_id=2068406516 instance=ExtResource("1_uwrxv")]
-<<<<<<< HEAD
-position = Vector2(-34, -28)
-player_id = 1
-=======
 position = Vector2(418, -53)
 playerId = 1
->>>>>>> origin/background
 
 [node name="Player0" parent="." unique_id=584666770 instance=ExtResource("1_uwrxv")]
 position = Vector2(-56, -11)
