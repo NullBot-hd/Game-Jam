@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b5g0ko4xt8cf1" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bb6nopo7kq3n" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="FontFile" uid="uid://bgh7son56nwqm" path="res://assets/fonts/PixelOperator8.ttf" id="3_u5sy4"]
+[ext_resource type="Script" uid="uid://0aplil73tfyx" path="res://scripts/camera_controller.gd" id="4_gee14"]
 [ext_resource type="PackedScene" uid="uid://dmgfcf5iru7aa" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bee5xr0dnrwi5" path="res://scenes/killzone.tscn" id="5_iywne"]
 
@@ -243,10 +244,17 @@ playerId = 1
 [node name="Player0" parent="." unique_id=584666770 instance=ExtResource("1_uwrxv")]
 position = Vector2(-56, -11)
 
-[node name="Camera2D" type="Camera2D" parent="Player0" unique_id=2050263947]
-position = Vector2(-1, -7)
+[node name="CameraController" type="Node2D" parent="." unique_id=739646145 node_paths=PackedStringArray("player_0", "player_1")]
+script = ExtResource("4_gee14")
+player_0 = NodePath("../Player0")
+player_1 = NodePath("../Player1")
+
+[node name="Camera2D" type="Camera2D" parent="CameraController" unique_id=2050263947]
 zoom = Vector2(5, 5)
-limit_bottom = 120
+limit_left = -9999918
+limit_top = -9999970
+limit_right = 10000082
+limit_bottom = 150
 limit_smoothed = true
 position_smoothing_enabled = true
 
