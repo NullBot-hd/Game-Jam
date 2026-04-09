@@ -239,7 +239,7 @@ uppercase = true
 
 [node name="Player1" parent="." unique_id=2068406516 instance=ExtResource("1_uwrxv")]
 position = Vector2(-34, -28)
-playerId = 1
+player_id = 1
 
 [node name="Player0" parent="." unique_id=584666770 instance=ExtResource("1_uwrxv")]
 position = Vector2(-56, -11)
