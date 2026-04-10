@@ -47,3 +47,8 @@ Ich habe 2 Tage lang an einer Hit- sowie Hurtbox gearbeitet damit der Player dam
 * ﻿﻿**Anastasiia Khalus, 3691814 (zac13qan)**
 Sie hat drei Tage lang am Hintergrund für das Spiel gearbeitet.
 Anastasiia hat das main menu und character selection erstellt. Die Character selection hat am Ende aber leider nicht funktioniert.
+
+
+
+P.S: Nina hat die von Anastasia erstellten Änderungen committet, obwohl Anastasia zwei Tage daran gearbeitet und das Menü vollständig entwickelt hat.
+
