@@ -426,12 +426,11 @@ script = ExtResource("9_0tnpc")
 
 [node name="HealthbarP1" parent="CanvasLayer/Control" unique_id=250216488 instance=ExtResource("10_vtaks")]
 layout_mode = 0
-offset_left = 1920.0
+offset_left = 1895.0
 offset_top = 29.0
-offset_right = 2220.0
+offset_right = 2195.0
 offset_bottom = 54.0
 scale = Vector2(-1, 1)
-value = 70.0
 script = ExtResource("9_0tnpc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1301472665]

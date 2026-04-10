@@ -534,10 +534,8 @@ z_index = 10
 position = Vector2(0, -19)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"attackOneP1"
+animation = &"attackOneP0"
 autoplay = "idleP0"
-frame = 3
-frame_progress = 0.75993377
 
 [node name="NormalCollision" type="CollisionShape2D" parent="." unique_id=43011888]
 position = Vector2(0, -17)
