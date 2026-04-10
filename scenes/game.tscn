@@ -12,6 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://dcmv6ciiw8iwt" path="res://assets/music/background-fighting-music2.mp3" id="10_kvpfn"]
 [ext_resource type="PackedScene" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kvpfn"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
 0:0/0 = 0
@@ -8413,13 +8415,22 @@ sources/6 = SubResource("TileSetAtlasSource_kvuet")
 [node name="Game" type="Node2D" unique_id=1924101017]
 scale = Vector2(5, 5)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1317256834]
+position = Vector2(400.19995, 406.39996)
+scale = Vector2(12.999999, 12.999999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1119863734]
+z_index = 4
+position = Vector2(-33.2, 1.3538501)
+shape = SubResource("WorldBoundaryShape2D_kvpfn")
+
 [node name="Player1" parent="." unique_id=2068406516 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_uwrxv")]
-position = Vector2(703, -59)
+position = Vector2(400.19998, 406.4)
 player_id = 1
 health_bar = NodePath("../CanvasLayer/Control/HealthbarP1")
 
 [node name="Player0" parent="." unique_id=584666770 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_uwrxv")]
-position = Vector2(540, -59)
+position = Vector2(-320, 411.6)
 health_bar = NodePath("../CanvasLayer/Control/HealthbarP0")
 
 [node name="CameraController" type="Node2D" parent="." unique_id=739646145 node_paths=PackedStringArray("player_0", "player_1")]
