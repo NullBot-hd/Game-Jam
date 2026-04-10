@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://v4m6x7ckf66b" path="res://assets/sprites/IMG_1731-removebg-preview.png" id="8_kvpfn"]
 [ext_resource type="Script" uid="uid://dnsi46j6kkq53" path="res://scripts/healthbar.gd" id="9_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://dcmv6ciiw8iwt" path="res://assets/music/background-fighting-music2.mp3" id="10_kvpfn"]
-[ext_resource type="PackedScene" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://c65jonpyebhur" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kvpfn"]
 
@@ -8437,10 +8437,11 @@ health_bar = NodePath("../CanvasLayer/Control/HealthbarP0")
 script = ExtResource("4_gee14")
 player_0 = NodePath("../Player0")
 player_1 = NodePath("../Player1")
+min_zoom = 0.1
+max_zoom = 0.25
 
 [node name="Camera2D" type="Camera2D" parent="CameraController" unique_id=2050263947]
 offset = Vector2(0, -70)
-zoom = Vector2(5, 5)
 limit_left = -9999918
 limit_top = -9999970
 limit_right = 10000082
