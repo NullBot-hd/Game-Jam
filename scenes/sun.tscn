@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://d03dtavvejce3"]
+
+[ext_resource type="Texture2D" uid="uid://dgwi8vhm5dg2o" path="res://assets/sprites/pixil-frame-0_10-removebg-preview.png" id="1_cojbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdjia"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(0, 0, 21, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gpmc"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(21, 0, 21, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtvjq"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(42, 0, 21, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1pnj"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(0, 19, 21, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8fpp"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(21, 19, 21, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcere"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(42, 19, 21, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkgqr"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(0, 38, 21, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arhad"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(21, 38, 21, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrf27"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(42, 38, 21, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oeo7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdjia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gpmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtvjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1pnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8fpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcere")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkgqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arhad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrf27")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncg33"]
+radius = 7.0
+
+[node name="sun" type="Node2D" unique_id=2029503686]
+
+[node name="sun" type="AnimatedSprite2D" parent="." unique_id=1218297914]
+position = Vector2(1, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_oeo7n")
+autoplay = "default"
+frame_progress = 0.9761352
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1416693759]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_ncg33")
