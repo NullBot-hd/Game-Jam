@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://v4m6x7ckf66b" path="res://assets/sprites/IMG_1731-removebg-preview.png" id="8_kvpfn"]
 [ext_resource type="Script" uid="uid://dnsi46j6kkq53" path="res://scripts/healthbar.gd" id="9_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://dcmv6ciiw8iwt" path="res://assets/music/background-fighting-music2.mp3" id="10_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://c65jonpyebhur" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -8411,6 +8411,7 @@ sources/6 = SubResource("TileSetAtlasSource_kvuet")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 
 [node name="Game" type="Node2D" unique_id=1924101017]
+scale = Vector2(5, 5)
 
 [node name="Player1" parent="." unique_id=2068406516 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_uwrxv")]
 position = Vector2(703, -59)

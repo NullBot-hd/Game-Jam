@@ -290,7 +290,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attackOneP0",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -322,7 +322,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attackOneP1",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -337,9 +337,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bj30b")
 }],
-"loop": true,
+"loop": false,
 "name": &"defeatP0",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -354,9 +354,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j2b1d")
 }],
-"loop": true,
+"loop": false,
 "name": &"defeatP1",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -410,7 +410,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dmgP0",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -424,7 +424,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dmgP1",
-"speed": 4.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -485,7 +485,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"runP0",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -502,7 +502,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"runP1",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -525,7 +525,7 @@ animations = [{
 size = Vector2(9.333334, 10.666666)
 
 [node name="Player" type="CharacterBody2D" unique_id=2068406516 node_paths=PackedStringArray("sneak_collision", "normal_collision")]
-scale = Vector2(3, 3)
+scale = Vector2(13, 13)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_g2els")
