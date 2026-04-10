@@ -28,4 +28,5 @@ Das Endergebnis wurde zu etwa 20 % mithilfe von künstlicher Intelligenz generie
 
 
 * ﻿﻿**Anastasiia Khalus, 3691814 (zac13qan)**
-
+Sie hat drei Tage lang am Hintergrund für das Spiel gearbeitet.
+Anastasiia hat das main menu und character selection erstellt. Die Character selection hat am Ende aber leider nicht funktioniert.
