@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://b7oouwmd00i4q" path="res://assets/sprites/character2-sneak.png" id="15_i4ail"]
 [ext_resource type="AudioStream" uid="uid://cxte40sapixex" path="res://assets/sounds/character-jump.mp3" id="16_a8ls1"]
 [ext_resource type="AudioStream" uid="uid://cas3tj6oowta5" path="res://assets/sounds/character-attack.mp3" id="17_qfm1y"]
+[ext_resource type="AudioStream" uid="uid://cp8dc22w7tmne" path="res://assets/sounds/character-defeat1.mp3" id="18_4r5pv"]
+[ext_resource type="AudioStream" uid="uid://jse1ygjahdmk" path="res://assets/sounds/character-dmg.mp3" id="19_60mlk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("2_tuyoq")
@@ -529,13 +531,8 @@ scale = Vector2(13, 13)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_g2els")
-player_id = null
 sneak_collision = NodePath("SneakCollision")
 normal_collision = NodePath("NormalCollision")
-attack_debounce = null
-is_blocking = null
-max_health = null
-health = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2036879363]
 z_index = 10
@@ -561,14 +558,6 @@ position = Vector2(0, -17)
 target_position = Vector2(24, 0)
 collision_mask = 3
 
-[node name="sfx-jump" type="AudioStreamPlayer2D" parent="." unique_id=1560269202]
-stream = ExtResource("16_a8ls1")
-volume_db = 10.0
-
-[node name="sfx-attack" type="AudioStreamPlayer2D" parent="." unique_id=1359502327]
-stream = ExtResource("17_qfm1y")
-volume_db = 10.0
-
 [node name="attack_debounce" type="Timer" parent="." unique_id=1404477527]
 wait_time = 0.5
 
@@ -576,6 +565,24 @@ wait_time = 0.5
 
 [node name="block_debounce" type="Timer" parent="." unique_id=127528145]
 wait_time = 3.0
+
+[node name="sfx-jump" type="AudioStreamPlayer" parent="." unique_id=1490502748]
+stream = ExtResource("16_a8ls1")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="sfx-attack" type="AudioStreamPlayer" parent="." unique_id=1360704693]
+stream = ExtResource("17_qfm1y")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="sfx-defeat" type="AudioStreamPlayer" parent="." unique_id=5348952]
+stream = ExtResource("18_4r5pv")
+volume_db = 15.0
+
+[node name="sfx-block" type="AudioStreamPlayer" parent="." unique_id=961434823]
+stream = ExtResource("19_60mlk")
+volume_db = 15.0
 
 [connection signal="timeout" from="attack_debounce" to="." method="_on_attack_debounce_timeout"]
 [connection signal="timeout" from="is_blocking" to="." method="_on_is_blocking_timeout"]
