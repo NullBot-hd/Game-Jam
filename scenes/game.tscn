@@ -1,18 +1,13 @@
 [gd_scene format=3 uid="uid://dgpvs5v2thds4"]
 
-[ext_resource type="Script" uid="uid://b1bjp7npiwhpw" path="res://scripts/game_manager.gd" id="1_p57ef"]
 [ext_resource type="PackedScene" uid="uid://du2g430hqsqag" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://b5g0ko4xt8cf1" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
-[ext_resource type="FontFile" uid="uid://bgh7son56nwqm" path="res://assets/fonts/PixelOperator8.ttf" id="3_u5sy4"]
 [ext_resource type="Script" uid="uid://0aplil73tfyx" path="res://scripts/camera_controller.gd" id="4_gee14"]
 [ext_resource type="PackedScene" uid="uid://bee5xr0dnrwi5" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://c7mb4i8b4j8kn" path="res://assets/sprites/pixil-frame-0 8.png" id="6_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dun36sdmtscrr" path="res://assets/sprites/pixil-frame-0 9.png" id="7_vtaks"]
 [ext_resource type="Texture2D" uid="uid://v4m6x7ckf66b" path="res://assets/sprites/IMG_1731-removebg-preview.png" id="8_kvpfn"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gee14"]
-font = ExtResource("3_u5sy4")
-font_size = 8
+[ext_resource type="PackedScene" uid="uid://c65jonpyebhur" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -369,22 +364,6 @@ sources/3 = SubResource("TileSetAtlasSource_dinhu")
 
 [node name="Game" type="Node2D" unique_id=1924101017]
 
-[node name="GameManager" type="Node" parent="." unique_id=1936832778]
-unique_name_in_owner = true
-script = ExtResource("1_p57ef")
-
-[node name="ScoreLabel" type="Label" parent="GameManager" unique_id=758122154]
-z_index = 10
-offset_left = -125.0
-offset_top = -50.0
-offset_right = -71.0
-offset_bottom = -27.0
-scale = Vector2(2.4428246, 2.1538894)
-text = "Score: 0"
-label_settings = SubResource("LabelSettings_gee14")
-autowrap_mode = 1
-uppercase = true
-
 [node name="Player1" parent="." unique_id=2068406516 instance=ExtResource("1_uwrxv")]
 position = Vector2(418, -53)
 player_id = 1
@@ -421,3 +400,30 @@ position = Vector2(-1, 99)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1548190470]
 shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=485180533]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=386912355]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthbarP1" parent="CanvasLayer/Control" unique_id=1826012925 instance=ExtResource("10_vtaks")]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 325.0
+offset_bottom = 50.0
+value = 70.0
+
+[node name="HealthbarP2" parent="CanvasLayer/Control" unique_id=250216488 instance=ExtResource("10_vtaks")]
+layout_mode = 0
+offset_left = 1895.0
+offset_top = 25.0
+offset_right = 2195.0
+offset_bottom = 50.0
+scale = Vector2(-1, 1)
+value = 70.0
