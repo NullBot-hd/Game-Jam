@@ -23,10 +23,16 @@ var lastDirection = 1
 	set(value):
 		var prev_health = health
 		health = clamp(value, 0, max_health)
-	
+		
+		animatedSprite2D.play("dmgP" + str(player_id))
+		
+		
+		health_bar.set_display_health(health)	
+		
 		if health == 0:
 			animatedSprite2D.play("defeatP" + str(player_id))
-		health_bar.set_display_health(health)	
+			await get_tree().create_timer(2.0).timeout   
+			queue_free()
 		print(health)
 
 
@@ -75,7 +81,10 @@ func _physics_process(delta: float) -> void:
 		animatedSprite2D.play("attackOneP" + str(player_id))
 		attack()
 	print(animatedSprite2D.animation)
-	if not (animatedSprite2D.is_playing() and animatedSprite2D.animation == "attackOneP0" or animatedSprite2D.animation == "attackOneP1"):
+	if not (animatedSprite2D.is_playing() 
+	and animatedSprite2D.animation == "attackOneP0" or animatedSprite2D.animation == "attackOneP1"
+	or animatedSprite2D.animation == "dmgP0" or animatedSprite2D.animation == "dmgP1" or 
+	animatedSprite2D.animation == "defeatP0" or animatedSprite2D.animation == "defeatP1"):
 		if is_on_floor() or is_sneaking:
 			if direction == 0:
 				if is_sneaking:
@@ -105,6 +114,6 @@ func attack():
 		
 		print(str(target))
 		if target.health:
-			target.health -= ATTACK_DAMAGE
+			target.health -= ATTACK_DAMAGE			
 		
 	ray_cast.target_position.x = defaultVal
