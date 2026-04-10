@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	var distance_x = abs(distance.x)
 	
 	var screen_size = get_viewport_rect().size
-	var target_zoom_x = screen_size.x / (distance_x + margin) * .5
+	var target_zoom_x = screen_size.x / (distance_x + margin)
 	
 
 	target_zoom_x = clamp(target_zoom_x, min_zoom, max_zoom)

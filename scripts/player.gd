@@ -35,7 +35,6 @@ var lastDirection = 1
 			animatedSprite2D.play("defeatP" + str(player_id))
 			await get_tree().create_timer(2.0).timeout   
 			queue_free()
-		print(health)
 
 
 func _physics_process(delta: float) -> void:
