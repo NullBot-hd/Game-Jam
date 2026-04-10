@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7mb4i8b4j8kn" path="res://assets/sprites/pixil-frame-0 8.png" id="6_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dun36sdmtscrr" path="res://assets/sprites/pixil-frame-0 9.png" id="7_vtaks"]
 [ext_resource type="Texture2D" uid="uid://v4m6x7ckf66b" path="res://assets/sprites/IMG_1731-removebg-preview.png" id="8_kvpfn"]
+[ext_resource type="Script" uid="uid://dnsi46j6kkq53" path="res://scripts/healthbar.gd" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://c65jonpyebhur" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -364,12 +365,14 @@ sources/3 = SubResource("TileSetAtlasSource_dinhu")
 
 [node name="Game" type="Node2D" unique_id=1924101017]
 
-[node name="Player1" parent="." unique_id=2068406516 instance=ExtResource("1_uwrxv")]
-position = Vector2(418, -53)
+[node name="Player1" parent="." unique_id=2068406516 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_uwrxv")]
+position = Vector2(703, -59)
 player_id = 1
+health_bar = NodePath("../CanvasLayer/Control/HealthbarP1")
 
-[node name="Player0" parent="." unique_id=584666770 instance=ExtResource("1_uwrxv")]
-position = Vector2(-56, -11)
+[node name="Player0" parent="." unique_id=584666770 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_uwrxv")]
+position = Vector2(540, -59)
+health_bar = NodePath("../CanvasLayer/Control/HealthbarP0")
 
 [node name="CameraController" type="Node2D" parent="." unique_id=739646145 node_paths=PackedStringArray("player_0", "player_1")]
 script = ExtResource("4_gee14")
@@ -377,6 +380,7 @@ player_0 = NodePath("../Player0")
 player_1 = NodePath("../Player1")
 
 [node name="Camera2D" type="Camera2D" parent="CameraController" unique_id=2050263947]
+offset = Vector2(0, -70)
 zoom = Vector2(5, 5)
 limit_left = -9999918
 limit_top = -9999970
@@ -411,19 +415,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HealthbarP1" parent="CanvasLayer/Control" unique_id=1826012925 instance=ExtResource("10_vtaks")]
+[node name="HealthbarP0" parent="CanvasLayer/Control" unique_id=1826012925 instance=ExtResource("10_vtaks")]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
 offset_right = 325.0
 offset_bottom = 50.0
-value = 70.0
+script = ExtResource("9_0tnpc")
 
-[node name="HealthbarP2" parent="CanvasLayer/Control" unique_id=250216488 instance=ExtResource("10_vtaks")]
+[node name="HealthbarP1" parent="CanvasLayer/Control" unique_id=250216488 instance=ExtResource("10_vtaks")]
 layout_mode = 0
-offset_left = 1895.0
-offset_top = 25.0
-offset_right = 2195.0
-offset_bottom = 50.0
+offset_left = 1920.0
+offset_top = 29.0
+offset_right = 2220.0
+offset_bottom = 54.0
 scale = Vector2(-1, 1)
-value = 70.0
+script = ExtResource("9_0tnpc")

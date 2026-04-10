@@ -1,16 +1,34 @@
 extends CharacterBody2D
 
-const SPEED: int = 100.0
-const JUMP_VELOCITY: int = -200.0
+const SPEED: int = 150.0
+const JUMP_VELOCITY: int = -275.0
+const ATTACK_DAMAGE: int = 10
 
 @export var player_id: int
+@export var health_bar: ProgressBar
 
 @export var sneak_collision: CollisionShape2D
 @export var normal_collision: CollisionShape2D
 
 var is_sneaking: bool = false
+var lastDirection = 1
 
 @onready var animatedSprite2D = $AnimatedSprite2D
+@onready var ray_cast: RayCast2D = $RayCast2D
+
+
+
+@export var max_health: int = 100
+@export var health: int = 100:
+	set(value):
+		var prev_health = health
+		health = clamp(value, 0, max_health)
+	
+		if health == 0:
+			animatedSprite2D.play("defeatP" + str(player_id))
+		health_bar.set_display_health(health)	
+		print(health)
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,7 +39,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jumpP" + str(player_id)) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
+
 	var direction := Input.get_axis("moveLeftP" + str(player_id), "moveRightP" + str(player_id))
+	
+	if direction != 0:
+		lastDirection = direction
 	
 	if normal_collision and sneak_collision:
 		if Input.is_action_just_pressed("sneakP" + str(player_id)):
@@ -49,16 +71,40 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	# Play animation	
-	if is_on_floor() or is_sneaking:
-		if direction == 0:
-			if is_sneaking:
-				animatedSprite2D.play("sneakP" + str(player_id))
-			else:	
-				animatedSprite2D.play("idleP" + str(player_id))
+	if(Input.is_action_just_pressed("attackP" + str(player_id))):
+		animatedSprite2D.play("attackOneP" + str(player_id))
+		attack()
+	print(animatedSprite2D.animation)
+	if not (animatedSprite2D.is_playing() and animatedSprite2D.animation == "attackOneP0" or animatedSprite2D.animation == "attackOneP1"):
+		if is_on_floor() or is_sneaking:
+			if direction == 0:
+				if is_sneaking:
+					animatedSprite2D.play("sneakP" + str(player_id))
+				else:	
+					animatedSprite2D.play("idleP" + str(player_id))
+			else:
+				animatedSprite2D.play("runP" + str(player_id))
 		else:
-			animatedSprite2D.play("runP" + str(player_id))
-	else:
-		animatedSprite2D.play("jumpP" + str(player_id))	
+			animatedSprite2D.play("jumpP" + str(player_id))	
+
+		
+	# Play animation	
+	
 		
 	move_and_slide()
+	
+func attack():	
+	var defaultVal = ray_cast.target_position.x
+	ray_cast.target_position.x *= lastDirection
+	
+	ray_cast.force_raycast_update()
+
+	
+	if ray_cast.is_colliding():
+		var target = ray_cast.get_collider()
+		
+		print(str(target))
+		if target.health:
+			target.health -= ATTACK_DAMAGE
+		
+	ray_cast.target_position.x = defaultVal

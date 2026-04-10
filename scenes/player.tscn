@@ -88,6 +88,38 @@ region = Rect2(512, 0, 128, 128)
 atlas = ExtResource("5_a8ls1")
 region = Rect2(0, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl8cc"]
+atlas = ExtResource("5_ur7pv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_487ah"]
+atlas = ExtResource("5_ur7pv")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
+atlas = ExtResource("5_ur7pv")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
+atlas = ExtResource("5_ur7pv")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc3p3"]
+atlas = ExtResource("9_fulsm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
+atlas = ExtResource("9_fulsm")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4otl"]
+atlas = ExtResource("9_fulsm")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2b1d"]
+atlas = ExtResource("9_fulsm")
+region = Rect2(384, 0, 128, 128)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("3_fjrip")
 region = Rect2(0, 0, 128, 128)
@@ -292,6 +324,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gl8cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_487ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md1ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj30b")
+}],
+"loop": true,
+"name": &"defeatP0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc3p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hax0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4otl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2b1d")
+}],
+"loop": true,
+"name": &"defeatP1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fulsm")
 }, {
 "duration": 1.0,
@@ -458,6 +524,7 @@ size = Vector2(9.333334, 10.666666)
 
 [node name="Player" type="CharacterBody2D" unique_id=2068406516 node_paths=PackedStringArray("sneak_collision", "normal_collision")]
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_g2els")
 sneak_collision = NodePath("SneakCollision")
 normal_collision = NodePath("NormalCollision")
@@ -467,8 +534,10 @@ z_index = 10
 position = Vector2(0, -19)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"sneakP1"
+animation = &"attackOneP1"
 autoplay = "idleP0"
+frame = 3
+frame_progress = 0.75993377
 
 [node name="NormalCollision" type="CollisionShape2D" parent="." unique_id=43011888]
 position = Vector2(0, -17)
@@ -480,3 +549,8 @@ position = Vector2(0, -10.000001)
 scale = Vector2(1.5, 1.75)
 shape = SubResource("RectangleShape2D_qhqgy")
 disabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=749468443]
+position = Vector2(0, -17)
+target_position = Vector2(24, 0)
+collision_mask = 3

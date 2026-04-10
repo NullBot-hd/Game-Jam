@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://c65jonpyebhur"]
 
-[ext_resource type="Script" uid="uid://c1jwab041pt12" path="res://scripts/healthbar.gd" id="1_flqgd"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p57ef"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
@@ -10,6 +8,37 @@ content_margin_top = 1.0
 content_margin_right = 1.0
 content_margin_bottom = 1.0
 bg_color = Color(0.37227353, 0.6899758, 0.3002124, 1)
+
+[sub_resource type="GDScript" id="GDScript_e2b52"]
+script/source = "extends ProgressBar
+@onready var damagebar = $Damagebar
+@onready var timer = $Timer
+
+func _ready():
+	timer.timeout.connect(_on_timer_timeout)
+
+func init_health(max_health: float):
+	max_value = max_health
+	value = max_health
+	
+	damagebar.max_value = max_health
+	damagebar.value = max_health
+
+func set_health(new_health: float):
+	value = new_health
+	
+	timer.start()
+
+func _on_timer_timeout():
+	var tween = create_tween()
+	
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+	
+	# Tween the damagebar's \"value\" property to match the current healthbar \"value\"
+	# The last number (0.4) is how long the animation takes in seconds
+	tween.tween_property(damagebar, \"value\", value, 0.4)
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
 bg_color = Color(0.07284262, 0.072842635, 0.072842576, 1)
@@ -25,9 +54,9 @@ offset_right = 35.0
 offset_bottom = 4.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_p57ef")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u5sy4")
-value = 60.0
+value = 100.0
 show_percentage = false
-script = ExtResource("1_flqgd")
+script = SubResource("GDScript_e2b52")
 
 [node name="Damagebar" type="ProgressBar" parent="." unique_id=2091945964]
 z_index = -1
@@ -40,7 +69,7 @@ grow_vertical = 2
 scale = Vector2(0.99126065, 1.066447)
 theme_override_styles/background = SubResource("StyleBoxFlat_gee14")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0tnpc")
-value = 80.0
+value = 100.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="." unique_id=1553774810]
