@@ -37,7 +37,7 @@ Das Endergebnis wurde zu etwa 20 % mithilfe von künstlicher Intelligenz generie
 
 
 * ﻿﻿**Angelina Luse, 3982943 (zol95gaz)**
-
+Ich habe 2 Tage lang an einer Hit- sowie Hurtbox gearbeitet damit der Player damage oder Schaden verteilen aber auch bekommen kann. Zudem habe ich die healthbar hinzugefügt die anzeigt wie viel Leben der Player noch hat und wie viel damage auf kurzer Zeit hinzugefügt wurde.
 
 * ﻿﻿**Anastasiia Khalus, 3691814 (zac13qan)**
 Sie hat drei Tage lang am Hintergrund für das Spiel gearbeitet.
