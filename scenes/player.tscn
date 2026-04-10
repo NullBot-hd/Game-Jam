@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://c8f26dyiu7vx3" path="res://assets/sprites/character2-default.png" id="11_4r5pv"]
 [ext_resource type="Texture2D" uid="uid://03uutnonkmb6" path="res://assets/sprites/character2-walk.png" id="13_60mlk"]
 [ext_resource type="Texture2D" uid="uid://b7oouwmd00i4q" path="res://assets/sprites/character2-sneak.png" id="15_i4ail"]
+[ext_resource type="AudioStream" uid="uid://cxte40sapixex" path="res://assets/sounds/character-jump.mp3" id="16_a8ls1"]
+[ext_resource type="AudioStream" uid="uid://cas3tj6oowta5" path="res://assets/sounds/character-attack.mp3" id="17_qfm1y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("2_tuyoq")
@@ -288,7 +290,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attackOneP0",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -320,7 +322,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attackOneP1",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -335,9 +337,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bj30b")
 }],
-"loop": true,
+"loop": false,
 "name": &"defeatP0",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -352,9 +354,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j2b1d")
 }],
-"loop": true,
+"loop": false,
 "name": &"defeatP1",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -408,7 +410,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dmgP0",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -422,7 +424,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dmgP1",
-"speed": 4.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -483,7 +485,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"runP0",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -500,7 +502,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"runP1",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -523,6 +525,7 @@ animations = [{
 size = Vector2(9.333334, 10.666666)
 
 [node name="Player" type="CharacterBody2D" unique_id=2068406516 node_paths=PackedStringArray("sneak_collision", "normal_collision")]
+scale = Vector2(13, 13)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_g2els")
@@ -552,3 +555,9 @@ disabled = true
 position = Vector2(0, -17)
 target_position = Vector2(24, 0)
 collision_mask = 3
+
+[node name="sfx-jump" type="AudioStreamPlayer2D" parent="." unique_id=1560269202]
+stream = ExtResource("16_a8ls1")
+
+[node name="sfx-attack" type="AudioStreamPlayer2D" parent="sfx-jump" unique_id=1359502327]
+stream = ExtResource("17_qfm1y")

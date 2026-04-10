@@ -15,6 +15,8 @@ var lastDirection = 1
 
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast: RayCast2D = $RayCast2D
+@onready var sfx_jump: AudioStreamPlayer2D = $"sfx-jump"
+@onready var sfx_attack: AudioStreamPlayer2D = $"sfx-jump/sfx-attack"
 
 
 
@@ -44,6 +46,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jumpP" + str(player_id)) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		sfx_jump.play()
 
 
 	var direction := Input.get_axis("moveLeftP" + str(player_id), "moveRightP" + str(player_id))
@@ -80,6 +83,7 @@ func _physics_process(delta: float) -> void:
 	if(Input.is_action_just_pressed("attackP" + str(player_id))):
 		animatedSprite2D.play("attackOneP" + str(player_id))
 		attack()
+		sfx_attack.play()
 	print(animatedSprite2D.animation)
 	if not (animatedSprite2D.is_playing() 
 	and animatedSprite2D.animation == "attackOneP0" or animatedSprite2D.animation == "attackOneP1"
