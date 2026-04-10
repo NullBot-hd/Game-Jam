@@ -53,12 +53,12 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() or is_sneaking:
 		if direction == 0:
 			if is_sneaking:
-				animatedSprite2D.play("sneak")
+				animatedSprite2D.play("sneakP" + str(player_id))
 			else:	
-				animatedSprite2D.play("idle")
+				animatedSprite2D.play("idleP" + str(player_id))
 		else:
-			animatedSprite2D.play("run")
+			animatedSprite2D.play("runP" + str(player_id))
 	else:
-		animatedSprite2D.play("jump")	
+		animatedSprite2D.play("jumpP" + str(player_id))	
 		
 	move_and_slide()
