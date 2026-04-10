@@ -12,6 +12,18 @@ Für die Zukunft ist geplant, das Projekt um ein zweites Kapitel oder Update zu 
 ***Shikomura** verbindet die Ästhetik der japanischen Folklore, spannungsgeladene Ehrenduelle und die Aussicht auf eine epische Schlacht gegen ein mythisches Monster. Damit schafft es das Fundament für ein packendes Kampfspiel-Universum mit großem Entwicklungspotenzial.*
 
 
+**Steuerung** (Tastatur-Bedienung)
+
+Spieler 1:
+	•	Bewegung: W A S D (oben / links / unten / rechts)
+	•	Angriff: E	
+  •	Verteidigung: Q
+
+Spieler 2:
+	•	Bewegung: I J K L (oben / links / unten / rechts)
+	•	Angriff: U
+	•	Verteidigung: O
+
 
 * **Khrystyna Babliak, 3780417 (mec07zuj)**
 Sie hat drei Tage lang am Hintergrund für das Spiel gearbeitet.
