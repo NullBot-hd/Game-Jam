@@ -8429,10 +8429,15 @@ shape = SubResource("WorldBoundaryShape2D_kvpfn")
 position = Vector2(431.00003, 124.19998)
 player_id = 1
 health_bar = NodePath("../CanvasLayer/Control/HealthbarP1")
+max_health = null
+health = null
 
 [node name="Player0" parent="." unique_id=584666770 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_uwrxv")]
 position = Vector2(-483.2, 162.00005)
+player_id = null
 health_bar = NodePath("../CanvasLayer/Control/HealthbarP0")
+max_health = null
+health = null
 
 [node name="CameraController" type="Node2D" parent="." unique_id=739646145 node_paths=PackedStringArray("player_0", "player_1")]
 script = ExtResource("4_gee14")
@@ -8440,7 +8445,7 @@ player_0 = NodePath("../Player0")
 player_1 = NodePath("../Player1")
 min_zoom = 0.22
 max_zoom = 0.3
-camBoarder = 85
+camBoarder = 90
 
 [node name="Camera2D" type="Camera2D" parent="CameraController" unique_id=2050263947]
 offset = Vector2(0, -70)
@@ -8470,6 +8475,7 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=485180533]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=386912355]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -8478,6 +8484,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HealthbarP0" parent="CanvasLayer/Control" unique_id=1826012925 instance=ExtResource("10_vtaks")]
+z_index = 100
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0

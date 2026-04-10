@@ -529,15 +529,20 @@ scale = Vector2(13, 13)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_g2els")
+player_id = null
 sneak_collision = NodePath("SneakCollision")
 normal_collision = NodePath("NormalCollision")
+attack_debounce = null
+is_blocking = null
+max_health = null
+health = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2036879363]
 z_index = 10
 position = Vector2(0, -19)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"attackOneP0"
+animation = &"defenceP0"
 autoplay = "idleP0"
 
 [node name="NormalCollision" type="CollisionShape2D" parent="." unique_id=43011888]
@@ -563,3 +568,15 @@ volume_db = 10.0
 [node name="sfx-attack" type="AudioStreamPlayer2D" parent="." unique_id=1359502327]
 stream = ExtResource("17_qfm1y")
 volume_db = 10.0
+
+[node name="attack_debounce" type="Timer" parent="." unique_id=1404477527]
+wait_time = 0.5
+
+[node name="is_blocking" type="Timer" parent="." unique_id=1528082756]
+
+[node name="block_debounce" type="Timer" parent="." unique_id=127528145]
+wait_time = 3.0
+
+[connection signal="timeout" from="attack_debounce" to="." method="_on_attack_debounce_timeout"]
+[connection signal="timeout" from="is_blocking" to="." method="_on_is_blocking_timeout"]
+[connection signal="timeout" from="block_debounce" to="." method="_on_block_debounce_timeout"]

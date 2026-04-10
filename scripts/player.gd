@@ -10,15 +10,16 @@ const ATTACK_DAMAGE: int = 10
 @export var sneak_collision: CollisionShape2D
 @export var normal_collision: CollisionShape2D
 
+@export var attack_debounce: bool
+var block_debounce = false
 var is_sneaking: bool = false
+@export var is_blocking = false
 var lastDirection = 1
 
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast: RayCast2D = $RayCast2D
 @onready var sfx_jump: AudioStreamPlayer2D = $"sfx-jump"
 @onready var sfx_attack: AudioStreamPlayer2D = $"sfx-attack"
-
-
 
 @export var max_health: int = 100
 @export var health: int = 100:
@@ -35,7 +36,6 @@ var lastDirection = 1
 			animatedSprite2D.play("defeatP" + str(player_id))
 			await get_tree().create_timer(2.0).timeout   
 			queue_free()
-		print(health)
 		
 		
 func _ready ():
@@ -86,14 +86,26 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	if(Input.is_action_just_pressed("attackP" + str(player_id))):
-		animatedSprite2D.play("attackOneP" + str(player_id))
-		attack()
-		sfx_attack.play()
-	print(animatedSprite2D.animation)
+		if not attack_debounce:
+			attack_debounce = true
+			animatedSprite2D.play("attackOneP" + str(player_id))
+			attack()
+			sfx_attack.play()
+			$attack_debounce.start()
+	
+	if(Input.is_action_just_pressed("blockP" + str(player_id))):
+		if not block_debounce:
+			block_debounce = true
+			is_blocking = true
+			animatedSprite2D.play("defenceP" + str(player_id))
+			$block_debounce.start()
+			$is_blocking.start()
+	
 	if not (animatedSprite2D.is_playing() 
 	and animatedSprite2D.animation == "attackOneP0" or animatedSprite2D.animation == "attackOneP1"
 	or animatedSprite2D.animation == "dmgP0" or animatedSprite2D.animation == "dmgP1" or 
-	animatedSprite2D.animation == "defeatP0" or animatedSprite2D.animation == "defeatP1"):
+	animatedSprite2D.animation == "defeatP0" or animatedSprite2D.animation == "defeatP1" or 
+	is_blocking):
 		if is_on_floor() or is_sneaking:
 			if direction == 0:
 				if is_sneaking:
@@ -121,8 +133,16 @@ func attack():
 	if ray_cast.is_colliding():
 		var target = ray_cast.get_collider()
 		
-		print(str(target))
-		if target.health:
+		if target.health and not target.is_blocking:
 			target.health -= ATTACK_DAMAGE			
 		
 	ray_cast.target_position.x = defaultVal
+
+func _on_attack_debounce_timeout() -> void:
+	attack_debounce = false
+
+func _on_block_debounce_timeout() -> void:
+	block_debounce = false
+
+func _on_is_blocking_timeout() -> void:
+	is_blocking = false
