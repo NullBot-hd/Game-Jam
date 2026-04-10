@@ -18,8 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://cxte40sapixex" path="res://assets/sounds/character-jump.mp3" id="16_a8ls1"]
 [ext_resource type="AudioStream" uid="uid://cas3tj6oowta5" path="res://assets/sounds/character-attack.mp3" id="17_qfm1y"]
 [ext_resource type="AudioStream" uid="uid://cp8dc22w7tmne" path="res://assets/sounds/character-defeat1.mp3" id="18_4r5pv"]
-[ext_resource type="AudioStream" uid="uid://jse1ygjahdmk" path="res://assets/sounds/character-dmg.mp3" id="19_60mlk"]
 [ext_resource type="AudioStream" uid="uid://jse1ygjahdmk" path="res://assets/sounds/character-dmg.mp3" id="18_fulsm"]
+[ext_resource type="AudioStream" uid="uid://dgkh2jnkpfohn" path="res://assets/sounds/character-defeat2.mp3" id="20_60mlk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("2_tuyoq")
@@ -582,8 +582,11 @@ stream = ExtResource("18_4r5pv")
 volume_db = 15.0
 
 [node name="sfx-block" type="AudioStreamPlayer" parent="." unique_id=961434823]
-stream = ExtResource("19_60mlk")
+stream = ExtResource("18_fulsm")
 volume_db = 15.0
+
+[node name="sfx-defeat2" type="AudioStreamPlayer" parent="." unique_id=416387933]
+stream = ExtResource("20_60mlk")
 
 [connection signal="timeout" from="attack_debounce" to="." method="_on_attack_debounce_timeout"]
 [connection signal="timeout" from="is_blocking" to="." method="_on_is_blocking_timeout"]

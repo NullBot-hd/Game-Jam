@@ -22,6 +22,7 @@ var lastDirection = 1
 @onready var sfx_attack: AudioStreamPlayer = $"sfx-attack"
 @onready var sfx_defeat: AudioStreamPlayer = $"sfx-defeat"
 @onready var sfx_block: AudioStreamPlayer = $"sfx-block"
+@onready var sfx_defeat_2: AudioStreamPlayer = $"sfx-defeat2"
 
 @export var max_health: int = 100
 @export var health: int = 100:
@@ -30,14 +31,18 @@ var lastDirection = 1
 		health = clamp(value, 0, max_health)
 		
 		animatedSprite2D.play("dmgP" + str(player_id))
-		sfx_dmg.play()
 		
 		health_bar.set_display_health(health)	
 		
 		if health == 0:
 			animatedSprite2D.play("defeatP" + str(player_id))
 			sfx_defeat.play()
-			await get_tree().create_timer(2.0).timeout   
+			await get_tree().create_timer(1.8).timeout
+			Engine.time_scale = 0.5
+			sfx_defeat_2.play()
+			
+			await get_tree().create_timer(4.5).timeout 
+			Engine.time_scale = 1  
 			get_tree().reload_current_scene()
 		
 func _ready ():
@@ -137,8 +142,8 @@ func attack():
 		
 		if target.health and not target.is_blocking:
 			target.health -= ATTACK_DAMAGE			
-		elif target.is_blocked:
-			sfx_block.play()
+#		elif target.is_blocked:
+		#	sfx_block.play()
 		
 	ray_cast.target_position.x = defaultVal
 
