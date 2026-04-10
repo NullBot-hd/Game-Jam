@@ -25,26 +25,26 @@ Spieler 2:
 	•	Verteidigung: O
 
 
-* **Khrystyna Babliak, 3780417 (mec07zuj)**
+* KhrystynaBab **Khrystyna Babliak, 3780417 (mec07zuj)** 
 Sie hat drei Tage lang am Hintergrund für das Spiel gearbeitet.
 Khrystyna hat  bewegliche, handgezeichnete Objekte erstellt und einzelne Elemente der Szene vorbereitet.
 Das Endergebnis wurde zu etwa 20 % mithilfe von künstlicher Intelligenz generiert bzw. nachbearbeitet, die dabei half, alle Elemente zu einem stimmigen Gesamtbild zusammenzufügen.
 
-* ﻿﻿**Michael Denzel, 3924118 (yit24jir)**
+* NullBot-hd ﻿﻿**Michael Denzel, 3924118 (yit24jir)** 
   	* Kamera Gescripted
   	* Player Bewegungen
   	* Code für die Health Bar
   	* Code für Attack und Block
 
-* **Nina Pfau, 3626719 (caw09nal)**
+* Nikoma013 **Nina Pfau, 3626719 (caw09nal)** 
 Sie hat die Charaktere designt und die Animationen erstellt.
 Sie war außerdem für die Soundeffekte und die Musikproduktion verantwortlich. Die Charaktere wurden selbst erstellt(per Hand gemalt).
 Die Soundeffekte wurden aus dem Internet verwendet (Links: pixabay.com / khinsider.com)
 
-* ﻿﻿**Angelina Luse, 3982943 (zol95gaz)**
+* ﻿﻿hanttalgi **Angelina Luse, 3982943 (zol95gaz)** 
 Ich habe 2 Tage lang an einer Hit- sowie Hurtbox gearbeitet damit der Player damage oder Schaden verteilen aber auch bekommen kann. Zudem habe ich die healthbar hinzugefügt die anzeigt wie viel Leben der Player noch hat und wie viel damage auf kurzer Zeit hinzugefügt wurde.
 
-* ﻿﻿**Anastasiia Khalus, 3691814 (zac13qan)**
+* ﻿Anastasiia-kh32 ﻿**Anastasiia Khalus, 3691814 (zac13qan)** 
 Sie hat drei Tage lang am Hintergrund für das Spiel gearbeitet.
 Anastasiia hat das main menu und character selection erstellt. Die Character selection hat am Ende aber leider nicht funktioniert.
 
