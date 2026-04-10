@@ -31,7 +31,10 @@ Khrystyna hat  bewegliche, handgezeichnete Objekte erstellt und einzelne Element
 Das Endergebnis wurde zu etwa 20 % mithilfe von künstlicher Intelligenz generiert bzw. nachbearbeitet, die dabei half, alle Elemente zu einem stimmigen Gesamtbild zusammenzufügen.
 
 * ﻿﻿**Michael Denzel, 3924118 (yit24jir)**
-
+  	* Kamera Gescripted
+  	* Player Bewegungen
+  	* Code für die Health Bar
+  	* Code für Attack und Block
 
 * **Nina Pfau, 3626719 (caw09nal)**
 
