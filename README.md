@@ -37,7 +37,9 @@ Das Endergebnis wurde zu etwa 20 % mithilfe von künstlicher Intelligenz generie
   	* Code für Attack und Block
 
 * **Nina Pfau, 3626719 (caw09nal)**
-
+Sie hat die Charaktere designt und die Animationen erstellt.
+Sie war außerdem für die Soundeffekte und die Musikproduktion verantwortlich. Die Charaktere wurden selbst erstellt(per Hand gemalt).
+Die Soundeffekte wurden aus dem Internet verwendet (Links: pixabay.com / khinsider.com)
 
 * ﻿﻿**Angelina Luse, 3982943 (zol95gaz)**
 Ich habe 2 Tage lang an einer Hit- sowie Hurtbox gearbeitet damit der Player damage oder Schaden verteilen aber auch bekommen kann. Zudem habe ich die healthbar hinzugefügt die anzeigt wie viel Leben der Player noch hat und wie viel damage auf kurzer Zeit hinzugefügt wurde.
@@ -45,3 +47,8 @@ Ich habe 2 Tage lang an einer Hit- sowie Hurtbox gearbeitet damit der Player dam
 * ﻿﻿**Anastasiia Khalus, 3691814 (zac13qan)**
 Sie hat drei Tage lang am Hintergrund für das Spiel gearbeitet.
 Anastasiia hat das main menu und character selection erstellt. Die Character selection hat am Ende aber leider nicht funktioniert.
+
+
+
+P.S: Nina hat die von Anastasia erstellten Änderungen committet, obwohl Anastasia zwei Tage daran gearbeitet und das Menü vollständig entwickelt hat.
+

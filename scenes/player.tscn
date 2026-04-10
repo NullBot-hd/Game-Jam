@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://cas3tj6oowta5" path="res://assets/sounds/character-attack.mp3" id="17_qfm1y"]
 [ext_resource type="AudioStream" uid="uid://cp8dc22w7tmne" path="res://assets/sounds/character-defeat1.mp3" id="18_4r5pv"]
 [ext_resource type="AudioStream" uid="uid://jse1ygjahdmk" path="res://assets/sounds/character-dmg.mp3" id="19_60mlk"]
+[ext_resource type="AudioStream" uid="uid://jse1ygjahdmk" path="res://assets/sounds/character-dmg.mp3" id="18_fulsm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("2_tuyoq")

@@ -30,6 +30,7 @@ var lastDirection = 1
 		health = clamp(value, 0, max_health)
 		
 		animatedSprite2D.play("dmgP" + str(player_id))
+		sfx_dmg.play()
 		
 		health_bar.set_display_health(health)	
 		
@@ -37,8 +38,7 @@ var lastDirection = 1
 			animatedSprite2D.play("defeatP" + str(player_id))
 			sfx_defeat.play()
 			await get_tree().create_timer(2.0).timeout   
-			queue_free()
-		
+			get_tree().reload_current_scene()
 		
 func _ready ():
 	if player_id == 1:
