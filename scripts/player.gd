@@ -36,6 +36,11 @@ var lastDirection = 1
 			await get_tree().create_timer(2.0).timeout   
 			queue_free()
 		print(health)
+		
+		
+func _ready ():
+	if player_id == 1:
+		animatedSprite2D.flip_h = true
 
 
 func _physics_process(delta: float) -> void:
