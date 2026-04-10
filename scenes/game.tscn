@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dun36sdmtscrr" path="res://assets/sprites/pixil-frame-0 9.png" id="7_vtaks"]
 [ext_resource type="Texture2D" uid="uid://v4m6x7ckf66b" path="res://assets/sprites/IMG_1731-removebg-preview.png" id="8_kvpfn"]
 [ext_resource type="Script" uid="uid://dnsi46j6kkq53" path="res://scripts/healthbar.gd" id="9_0tnpc"]
-[ext_resource type="AudioStream" uid="uid://dcmv6ciiw8iwt" path="res://assets/music/background-fighting-music2.mp3" id="10_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://c65jonpyebhur" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://kae7cmfjfpwu" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
+[ext_resource type="AudioStream" uid="uid://ckd2boywnu3dk" path="res://assets/music/background-fighting-music.mp3" id="12_dinhu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kvpfn"]
 
@@ -8478,24 +8478,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HealthbarP0" parent="CanvasLayer/Control" unique_id=1826012925 instance=ExtResource("10_vtaks")]
-visible = false
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
-offset_right = 325.0
-offset_bottom = 50.0
+offset_right = 625.0
+offset_bottom = 75.0
 script = ExtResource("9_0tnpc")
 
 [node name="HealthbarP1" parent="CanvasLayer/Control" unique_id=250216488 instance=ExtResource("10_vtaks")]
-visible = false
 layout_mode = 0
 offset_left = 1895.0
 offset_top = 29.0
-offset_right = 2195.0
-offset_bottom = 54.0
+offset_right = 2495.0
+offset_bottom = 79.0
 scale = Vector2(-1, 1)
 script = ExtResource("9_0tnpc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1301472665]
-stream = ExtResource("10_kvpfn")
+stream = ExtResource("12_dinhu")
+volume_db = -12.0
 autoplay = true

@@ -558,6 +558,8 @@ collision_mask = 3
 
 [node name="sfx-jump" type="AudioStreamPlayer2D" parent="." unique_id=1560269202]
 stream = ExtResource("16_a8ls1")
+volume_db = 10.0
 
-[node name="sfx-attack" type="AudioStreamPlayer2D" parent="sfx-jump" unique_id=1359502327]
+[node name="sfx-attack" type="AudioStreamPlayer2D" parent="." unique_id=1359502327]
 stream = ExtResource("17_qfm1y")
+volume_db = 10.0

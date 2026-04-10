@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c65jonpyebhur"]
+[gd_scene format=3 uid="uid://kae7cmfjfpwu"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p57ef"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2b52"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
 content_margin_left = 1.0
@@ -40,19 +40,16 @@ func _on_timer_timeout():
 	tween.tween_property(damagebar, \"value\", value, 0.4)
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
-bg_color = Color(0.07284262, 0.072842635, 0.072842576, 1)
-shadow_color = Color(0, 0, 0, 0.27450982)
-shadow_offset = Vector2(1, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flqgd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
 bg_color = Color(0.94428116, 0.94428116, 0.94428116, 1)
 
 [node name="Healthbar" type="ProgressBar" unique_id=1826012925]
 z_index = 1
-offset_right = 35.0
-offset_bottom = 4.0
-theme_override_styles/background = SubResource("StyleBoxEmpty_p57ef")
+offset_right = 72.0
+offset_bottom = 16.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_e2b52")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u5sy4")
 value = 100.0
 show_percentage = false
@@ -64,10 +61,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 0.6347809
+offset_bottom = -0.99691105
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.99126065, 1.066447)
-theme_override_styles/background = SubResource("StyleBoxFlat_gee14")
+theme_override_styles/background = SubResource("StyleBoxFlat_flqgd")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0tnpc")
 value = 100.0
 show_percentage = false

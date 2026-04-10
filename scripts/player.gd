@@ -16,7 +16,7 @@ var lastDirection = 1
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast: RayCast2D = $RayCast2D
 @onready var sfx_jump: AudioStreamPlayer2D = $"sfx-jump"
-@onready var sfx_attack: AudioStreamPlayer2D = $"sfx-jump/sfx-attack"
+@onready var sfx_attack: AudioStreamPlayer2D = $"sfx-attack"
 
 
 
