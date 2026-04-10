@@ -20,6 +20,9 @@ var lastDirection = 1
 @onready var ray_cast: RayCast2D = $RayCast2D
 @onready var sfx_jump: AudioStreamPlayer2D = $"sfx-jump"
 @onready var sfx_attack: AudioStreamPlayer2D = $"sfx-attack"
+@onready var sfx_dmg: AudioStreamPlayer2D = $"sfx-dmg"
+
+
 
 @export var max_health: int = 100
 @export var health: int = 100:
@@ -28,15 +31,14 @@ var lastDirection = 1
 		health = clamp(value, 0, max_health)
 		
 		animatedSprite2D.play("dmgP" + str(player_id))
-		
+		sfx_dmg.play()
 		
 		health_bar.set_display_health(health)	
 		
 		if health == 0:
 			animatedSprite2D.play("defeatP" + str(player_id))
 			await get_tree().create_timer(2.0).timeout   
-			queue_free()
-		
+			get_tree().reload_current_scene()
 		
 func _ready ():
 	if player_id == 1:

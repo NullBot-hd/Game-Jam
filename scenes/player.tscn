@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b7oouwmd00i4q" path="res://assets/sprites/character2-sneak.png" id="15_i4ail"]
 [ext_resource type="AudioStream" uid="uid://cxte40sapixex" path="res://assets/sounds/character-jump.mp3" id="16_a8ls1"]
 [ext_resource type="AudioStream" uid="uid://cas3tj6oowta5" path="res://assets/sounds/character-attack.mp3" id="17_qfm1y"]
+[ext_resource type="AudioStream" uid="uid://jse1ygjahdmk" path="res://assets/sounds/character-dmg.mp3" id="18_fulsm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("2_tuyoq")
@@ -529,13 +530,8 @@ scale = Vector2(13, 13)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_g2els")
-player_id = null
 sneak_collision = NodePath("SneakCollision")
 normal_collision = NodePath("NormalCollision")
-attack_debounce = null
-is_blocking = null
-max_health = null
-health = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2036879363]
 z_index = 10
@@ -576,6 +572,9 @@ wait_time = 0.5
 
 [node name="block_debounce" type="Timer" parent="." unique_id=127528145]
 wait_time = 3.0
+
+[node name="sfx-dmg" type="AudioStreamPlayer2D" parent="." unique_id=1898570619]
+stream = ExtResource("18_fulsm")
 
 [connection signal="timeout" from="attack_debounce" to="." method="_on_attack_debounce_timeout"]
 [connection signal="timeout" from="is_blocking" to="." method="_on_is_blocking_timeout"]
