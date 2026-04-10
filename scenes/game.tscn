@@ -3,15 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://du2g430hqsqag" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://b5g0ko4xt8cf1" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://0aplil73tfyx" path="res://scripts/camera_controller.gd" id="4_gee14"]
-[ext_resource type="PackedScene" uid="uid://dmgfcf5iru7aa" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bee5xr0dnrwi5" path="res://scenes/killzone.tscn" id="5_iywne"]
-[ext_resource type="Texture2D" uid="uid://dxghepx22oqtx" path="res://assets/sprites/pixil-frame-0 8.png" id="6_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://c7mb4i8b4j8kn" path="res://assets/sprites/pixil-frame-0 8.png" id="6_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dun36sdmtscrr" path="res://assets/sprites/pixil-frame-0 9.png" id="7_vtaks"]
 [ext_resource type="Texture2D" uid="uid://v4m6x7ckf66b" path="res://assets/sprites/IMG_1731-removebg-preview.png" id="8_kvpfn"]
 [ext_resource type="Script" uid="uid://dnsi46j6kkq53" path="res://scripts/healthbar.gd" id="9_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://dcmv6ciiw8iwt" path="res://assets/music/background-fighting-music2.mp3" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://c65jonpyebhur" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
-[ext_resource type="AudioStream" uid="uid://dcmv6ciiw8iwt" path="res://assets/music/background-fighting-music2.mp3" id="9_0tnpc"]
-[ext_resource type="PackedScene" path="res://scenes/Healthbar.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -366,44 +364,6 @@ sources/3 = SubResource("TileSetAtlasSource_dinhu")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 
-[sub_resource type="Animation" id="Animation_lnu2h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(47, -73)]
-}
-
-[sub_resource type="Animation" id="Animation_lbhrr"]
-resource_name = "move"
-length = 1.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(47, -73), Vector2(100, -72)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_iywne"]
-_data = {
-&"RESET": SubResource("Animation_lnu2h"),
-&"move": SubResource("Animation_lbhrr")
-}
-
 [node name="Game" type="Node2D" unique_id=1924101017]
 
 [node name="Player1" parent="." unique_id=2068406516 node_paths=PackedStringArray("health_bar") instance=ExtResource("1_uwrxv")]
@@ -471,9 +431,9 @@ offset_top = 29.0
 offset_right = 2220.0
 offset_bottom = 54.0
 scale = Vector2(-1, 1)
-script = ExtResource("9_0tnpc")
 value = 70.0
+script = ExtResource("9_0tnpc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1301472665]
-stream = ExtResource("9_0tnpc")
+stream = ExtResource("10_kvpfn")
 autoplay = true
