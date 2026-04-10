@@ -13,6 +13,7 @@ const ATTACK_DAMAGE: int = 10
 @export var attack_debounce: bool
 var block_debounce = false
 var is_sneaking: bool = false
+var game_over = true
 @export var is_blocking = false
 var lastDirection = 1
 
@@ -37,12 +38,14 @@ var lastDirection = 1
 		if health == 0:
 			animatedSprite2D.play("defeatP" + str(player_id))
 			sfx_defeat.play()
+			game_over = true
 			await get_tree().create_timer(1.8).timeout
 			Engine.time_scale = 0.5
 			sfx_defeat_2.play()
 			
 			await get_tree().create_timer(4.5).timeout 
 			Engine.time_scale = 1  
+			game_over = false
 			get_tree().reload_current_scene()
 		
 func _ready ():
@@ -112,7 +115,7 @@ func _physics_process(delta: float) -> void:
 	and animatedSprite2D.animation == "attackOneP0" or animatedSprite2D.animation == "attackOneP1"
 	or animatedSprite2D.animation == "dmgP0" or animatedSprite2D.animation == "dmgP1" or 
 	animatedSprite2D.animation == "defeatP0" or animatedSprite2D.animation == "defeatP1" or 
-	is_blocking):
+	is_blocking or game_over):
 		if is_on_floor() or is_sneaking:
 			if direction == 0:
 				if is_sneaking:
