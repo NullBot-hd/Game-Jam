@@ -5,17 +5,21 @@ extends Node2D
 
 @onready var camera: Camera2D = $Camera2D
 
-@export var margin: float = 1 
-@export var min_zoom: float = 3
-@export var max_zoom: float = 4
-@export var zoom_speed: float = 5.0
+@export var margin: float 
+@export var min_zoom: float
+@export var max_zoom: float 
+@export var zoom_speed: float 
+
+@export var camBoarder: int 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
 	if not player_0 or not player_1:
 		return
 		
-	camera.position = (player_0.position + player_1.position) / 2.0
+	camera.position.x = clamp((player_0.position + player_1.position).x / 2.0, -camBoarder, camBoarder)
+	
+	
 	
 	var distance = calcOffset()
 	var distance_x = abs(distance.x)

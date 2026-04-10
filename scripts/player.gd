@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED: int = 150.0
-const JUMP_VELOCITY: int = -275.0
+const SPEED: int = 3000.0
+const JUMP_VELOCITY: int = -1750.0 * 3
 const ATTACK_DAMAGE: int = 10
 
 @export var player_id: int
@@ -40,7 +40,7 @@ var lastDirection = 1
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * 6
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jumpP" + str(player_id)) and is_on_floor():
